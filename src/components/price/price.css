@@ -118,3 +118,111 @@
         font-size: 20px;
     }
 }
+@media(max-width:1024px){
+    .show-price{
+        width: 800px;
+    }
+    .price-title{
+        width: 600px;
+    }
+    .all-works{
+        width: 600px;
+    }
+    .list-of-works{
+        width: 600px;
+    }
+    .price-bottom{
+        width: 600px;
+    }
+    .price{
+        margin-right: 170px;
+    }
+
+}
+@media(max-width:768px){
+    .show-price{
+        width: 600px;
+    }
+    .price-title{
+        font-size: 15px;
+        width: 500px;
+    }
+    .list-of-works{
+        width: 500px;
+        font-size: 16px;
+    }
+    .all-works{
+        width: 500px;
+        font-size: 16px;
+    }
+    .price{
+        margin-right: 100px;
+        height: 50px;
+    }
+    .total-price{
+        margin-right: 80px;
+    }
+    .price a{
+        height: 50px;
+        padding: 15px;
+    }
+}
+@media(max-width:320px){
+    .show-price{
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 550px;
+    }
+    .price-title{
+        font-size: 14px;
+        width: 210px;
+        margin-top: 20px;
+    }
+    .all-works{
+        width: 204px;
+        margin-top: 20px;
+    }
+    .all-works p{
+        font-size: 12px;
+    }
+    .list-of-works{
+        width: 200px;
+        margin: 0px;
+    }
+    .name-of-work p{
+        font-size: 10px;
+    }
+    .price-of-work{
+        text-align: right;
+    }
+    .name-of-work{
+        width: 133px;
+    }
+    .price-of-name-work p{
+        margin-right: 0px;
+        font-size: 10px;
+    }
+    .price-bottom{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 200px;
+        align-items: center;
+    }
+    .price{
+        width: 200px;
+        font-size: 12px;
+        margin-right: 0px;
+    }
+    .price a{
+        padding-right: 75px;
+        padding-top: 17px;
+    }
+    .total-price{
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
+
+
+}

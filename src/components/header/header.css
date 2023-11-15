@@ -45,6 +45,12 @@
 .name-user{
   color: white;
 }
+.account{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 
 @media (max-width: 1440px) {
   .header {
@@ -54,7 +60,7 @@
     width: 1140px;
   }
   .nav-menu{
-    width: 800px;
+    width: 700px;
   }
 }
 @media (max-width: 1024px) {
@@ -105,5 +111,8 @@
   }
   .nav-menu{
     display: none;
+  }
+  .name-user{
+    font-size: 10px;
   }
 }

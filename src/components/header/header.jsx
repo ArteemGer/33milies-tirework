@@ -90,10 +90,12 @@ export const Header = () => {
               </button>
             </div>
           </div>
-          <p className='name-user'>{!isLoading && user ? user.email : ''}</p>
-          <button className='log-in' onClick={openModal}>
-            <img src='/logIn.png'></img>
-          </button>
+          <div className="account">
+            <p className='name-user'>{!isLoading && user ? user.email : ''}</p>
+            <button className='log-in' onClick={openModal}>
+              <img src='/logIn.png'></img>
+            </button>
+          </div>
           {isModalOpen && <Modal closeModal={closeModal} isModalOpen={isModalOpen}/>}
         </div>
     </header>
