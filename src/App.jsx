@@ -8,6 +8,7 @@ import { Payment } from "./pages/payment/payment";
 import { Confirm } from "./pages/confirm/confirm";
 import { Reg } from "./pages/reg/reg";
 import { Profile } from "./pages/profile/profile";
+import { Page404 } from "./pages/404/404";
 
 function App() {
   const router = createBrowserRouter([
@@ -51,6 +52,13 @@ function App() {
       element:
       <Layout>
         <Profile />
+      </Layout>
+    },
+    {
+      path: "*",
+      element:
+      <Layout>
+        <Page404 />
       </Layout>
     }
 

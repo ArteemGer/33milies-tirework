@@ -1,0 +1,19 @@
+.main-confirm{
+    margin-top: 188px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 187px;
+}
+.main-404{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 248px;
+    margin-bottom: 142px;
+}
+.no-page{
+    font-size: 50px;
+}
