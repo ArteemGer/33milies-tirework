@@ -1,0 +1,70 @@
+.input-info{
+    width: 1620px;
+    height: 775px;
+    border: 2px rgba(181, 181, 181, 1) solid;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 76px;
+}
+.inputs p{
+    margin-top: 16px;
+    font-size: 22px;
+    color: rgba(126, 126, 126, 1);
+    margin-bottom: 10px;
+}
+.inputs{
+    margin-top: 29px;
+    margin-left: 136px;
+    display: flex;
+    flex-direction: column;
+    width: 528px;
+}
+.input{
+    width: 528px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(242, 242, 242, 1);
+    font-size: 22px;
+    padding-left: 10px;
+}
+.add{
+    height: 166px;
+}
+.date{
+    margin-top: 45px;
+    margin-left: 154px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.date a{
+    font-size: 21px;
+}
+.date-choose{
+    margin-top: 40px;
+    width: 666px;
+    height: 506px;
+    background-color: rgba(128, 128, 128, 0.199);
+}
+.confirm{
+    width: 258px;
+    height: 56px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 148, 255, 1);
+    font-size: 20px;
+    color: white;
+    margin-top: 40px;
+    transition: 0.2s linear;
+}
+.confirm a{
+    padding-top: 15px;
+    display: block;
+    width: 258px;
+    height: 56px;
+    color: white;
+    text-decoration: none;
+}
+.confirm:hover{
+    background-color: #0072c4;
+}

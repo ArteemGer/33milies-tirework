@@ -1,0 +1,63 @@
+.registration{
+    width: 1620px;
+}
+.reg-content{
+    border: 1px black solid;
+    background-color: black;
+    border-radius: 10px;
+    height: 1090px;
+    margin-bottom: 270px;
+    display:flex;
+}
+.reg-title{
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+.reg-inputs{
+    margin-top: 60px;
+    margin-left: 131px;
+    display: flex;
+    flex-direction: column;
+}
+.inputs-text{
+    margin-top: 30px;
+    font-size: 20px;
+    color: rgba(126, 126, 126, 1);
+}
+.reg-input{
+    margin-top: 15px;
+    background-color: rgba(242, 242, 242, 1);
+    width: 530px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.reg-confirm{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 70px;
+    width: 526px;
+    height: 56px;
+    background-color: white;
+    color: black;
+    transition: 0.2s linear;
+}
+.reg-confirm:hover{
+    border: 2px white solid;
+    background-color: black;
+    color: white;
+}
+.wheel-img{
+    margin-left: 140px;
+    width: 818px;
+    height: 1090px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(18, 19, 20, 1);
+    align-items: center;
+    border-radius: 10px;
+}

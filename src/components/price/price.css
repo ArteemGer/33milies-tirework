@@ -1,0 +1,120 @@
+.show-price{
+    border: 1px black solid;
+    border-radius: 10px;
+    height: 758px;
+    width: 1620px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 75px;
+}
+.price-title{
+    width: 1363px;
+    margin-top: 60px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.all-works{
+    margin-top: 73px;
+    width: 1363px;
+    display: flex;
+    justify-content: space-between;
+}
+.price-of-work{
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(126, 126, 126, 1);
+}
+.type-of-work{
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(126, 126, 126, 1);
+}
+.list-of-works{
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1363px;
+    display: flex;
+    justify-content: space-between;
+}
+.price-of-name-work p{
+    margin-right: 100px;
+    margin-top: 25px;
+}
+.name-of-work p{
+    margin-top: 25px;
+}
+.price-bottom{
+    width: 1363px;
+    margin-top: 95px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.total-price{
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 50px;
+}
+.price a{
+    display: block;
+    padding: 17px;
+    color: white;
+    text-decoration: none;
+    width: 258px;
+    height: 56px;
+}
+.price{
+    margin-right: 900px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    width: 258px;
+    height: 56px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 148, 255, 1);
+    transition: 0.2s linear;
+}
+.price:hover{
+    background-color: #0072c4;
+}
+@media(max-width:1440px){
+    .show-price{
+        width: 1140px;
+    }
+    .price-title{
+        font-size: 22px;
+        width: 1005px;
+    }
+    .all-works{
+        width: 1000px;
+    }
+    .all-works p{
+        font-size: 20px;
+    }
+    .list-of-works{
+        width: 1000px;
+        font-size: 20px;
+    }
+    .price-of-name-work{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .price-of-name-work p{
+        margin-right: 70px;
+    }
+    .price-bottom{
+        width: 1000px;
+    }
+    .price{
+        margin-right: 572px;
+    }
+    .total-price{
+        font-size: 20px;
+    }
+}

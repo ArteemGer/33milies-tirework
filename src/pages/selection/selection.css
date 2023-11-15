@@ -1,0 +1,189 @@
+.app{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 50px;
+}
+.address{
+    color: rgba(126, 126, 126, 1);
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.2s linear;
+}
+.select-car{
+    width: 1620px;
+    height: 585px;
+    border: 2px rgba(181, 181, 181, 1) solid;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 76px;
+}
+.first-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    gap: 25px;
+}
+.back{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: url(/public/back.png);
+    background-size: cover;
+    border: none;
+}
+.select-options{
+    margin-left: 136px;
+    margin-top: 69px;
+}
+.first-select-option{
+    margin-top: 43px;
+    display: flex;
+}
+.auto-type p{
+    font-size: 22px;
+    color: rgba(126, 126, 126, 1);
+    margin-bottom: 10px;
+}
+.auto-type-select{
+    width: 394px;
+    height: 58px;
+    font-size: 20px;
+    background-color: rgba(242, 242, 242, 1);
+    border-radius: 10px;
+    padding-left: 15px;
+}
+.wheel-type{
+    margin-left: 15px;
+}
+.wheel-type p{
+    font-size: 22px;
+    color: rgba(126, 126, 126, 1);
+    margin-bottom: 10px;
+}
+.wheel-type-select{
+    width: 257px;
+    height: 58px;
+    font-size: 20px;
+    background-color: rgba(242, 242, 242, 1);
+    border-radius: 10px;
+    padding-left: 15px;
+}
+.second-select-option{
+    margin-top: 25px;
+}
+.work-type p{
+    font-size: 22px;
+    color: rgba(126, 126, 126, 1);
+    margin-bottom: 10px;
+}
+.work-type-select{
+    width: 666px;
+    height: 58px;
+    font-size: 20px;
+    background-color: rgba(242, 242, 242, 1);
+    border-radius: 10px;
+    padding-left: 15px;
+}
+.photo-type-car{
+    margin-left: 124px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.car-type{
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+}
+.footnote{
+    font-weight: bold;
+    text-align: center;
+    color: rgba(126, 126, 126, 1);
+    font-size: 25px;
+}
+.button-select{
+    margin-top: 50px;
+}
+.get-price{
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    width: 258px;
+    height: 56px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 148, 255, 1);
+    transition: 0.2s linear;
+}
+.reset{
+    margin-left: 15px;
+    color: rgba(126, 126, 126, 1);
+    border: 2.5px rgba(126, 126, 126, 1) solid;
+    font-weight: bold;
+    font-size: 20px;
+    width: 258px;
+    height: 56px;
+    border-radius: 10px;
+    background-color: white;
+    transition: 0.2s linear;
+}
+.address:hover{
+    color: black;
+}
+.get-price:hover{
+    background-color: #0072c4;
+}
+.reset:hover{
+    border: 2.5px rgb(0, 0, 0) solid;
+    color: black;
+}
+@media (max-width: 1440px) {
+    .selection{
+        width: 1140px;
+    }
+    .title{
+        font-size: 40px;
+    }
+    .select-car{
+        width: 1140px;
+        height: 536px;
+    }
+    .address{
+        font-size: 20px;
+    }
+    .select-options p{
+        font-size: 20px;
+    }
+    .select-options{
+        margin-left: 96px;
+        margin-top: 40px;
+    }
+    .auto-type-select, .wheel-type-select{
+        width: 274px;
+        height: 50px;
+    }
+    .work-type-select{
+        width: 563px;
+        height: 50px;
+    }
+    .photo img{
+        width: 274px;
+        height: 130px;
+    }
+    .car-type{
+        font-size: 20px;
+    }
+    .footnote{
+        font-size: 20px;
+        width: 357px;
+    }
+    .photo-type-car{
+        margin-left: 3px;
+    }
+}
