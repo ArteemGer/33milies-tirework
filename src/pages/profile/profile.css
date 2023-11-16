@@ -7,7 +7,7 @@
     font-size: 20px;
     border-radius: 10px;
     border: none;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-left: 136px;
 }
 .profile-data{
@@ -48,4 +48,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+.order-data{
+    width: 1620px;
+    height: 576px;
+    border: 2px rgba(181, 181, 181, 1) solid;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

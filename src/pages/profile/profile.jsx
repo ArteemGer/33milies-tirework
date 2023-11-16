@@ -27,8 +27,7 @@ export const Profile = () => {
 
     const signOut = async() => {
         const { error } = await supabase.auth.signOut()
-        navigate(-1)
-        window.location.reload()
+        return window.location.href = `${window.location.origin}/`;
     }
 
 
@@ -53,6 +52,10 @@ export const Profile = () => {
                     </div>
                 </div>
                 <button className="log-out" onClick={() => signOut()}>Выйти из аккаунта</button>
+            </div>
+            <h3 className="user-type">Заказы</h3>
+            <div className="order-data">
+
             </div>
         </div>
 
