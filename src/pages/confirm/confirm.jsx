@@ -11,7 +11,7 @@ export function Confirm() {
         <div className="app">
             <main className="main-confirm">
                 <img src="/confirm.png" alt="" />
-                <p className='order-status'>Ваш заказ успешно отправлен </p>
+                <p className='order-status'>Ваша заявка успешно отправлена </p>
                 <button className='back-to-home'>
                     <NavLink to={backToHome.src}>
                         {backToHome.name}
