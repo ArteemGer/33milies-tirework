@@ -27,8 +27,7 @@ export const Profile = () => {
 
     const signOut = async() => {
         const { error } = await supabase.auth.signOut()
-        navigate(-1)
-        window.location.reload()
+        return window.location.href = `${window.location.origin}/`;
     }
 
 
