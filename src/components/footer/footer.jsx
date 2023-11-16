@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="container">
         <div className = 'phone'>
           <p>8 915 779-15-33 — Красный переулок, д. </p>
-          <p>188 910 772-10-42 — ул. Киржачская, д. 1Б</p>
+          <p>8 910 772-10-42— ул. Киржачская, д. 1Б</p>
         </div>
         <div className='mini-logo'>
           <img src='/mini-logo.png'/>

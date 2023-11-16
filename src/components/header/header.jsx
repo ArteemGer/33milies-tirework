@@ -90,6 +90,9 @@ export const Header = () => {
               </button>
             </div>
           </div>
+          <div className="phone">
+            <p className='numbers'>8 910 772-10-42</p>
+          </div>
           <div className="account">
             <p className='name-user'>{!isLoading && user ? user.email : ''}</p>
             <button className='log-in' onClick={openModal}>

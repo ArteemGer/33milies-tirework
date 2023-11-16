@@ -58,7 +58,7 @@ export const Modal = ({closeModal, isModalOpen}) =>{
             handleCloseModal()
             window.location.reload()
         } else{
-            alert('такого аккаута не существует')
+            alert('Введенные почта или пароль не верны')
         }
     }
 

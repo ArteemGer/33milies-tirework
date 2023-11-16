@@ -92,8 +92,8 @@ export const Selection = () => {
                                 <p>Номер комплексных работ</p>
                                 <select name="work-type" id="work-type" className='work-type-select' onChange={handleWorkTypeChange}>
                                     <option value=""  hidden>Номер комплексных работ</option>
-                                    <option value="1">Комплекс 1 (смена колес в сборе)</option>
-                                    <option value="2">Комплекс 2 (сезонная замена шин)</option>
+                                    <option value="1">Комплекс 1 (для тех, у кого 2 комплекта шин и 2 комплекта дисков)</option>
+                                    <option value="2">Комплекс 2 (для тех, у кого 2 комплекта шин и 1 комплект дисков)</option>
                                 </select>
                             </div>
                         </div>

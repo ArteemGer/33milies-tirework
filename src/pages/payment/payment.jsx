@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { Price } from '../../components/price/price';
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
+
 import './payment.css'
 export function Payment() {
     const navigate = useNavigate()
@@ -13,6 +15,10 @@ export function Payment() {
     const car = searchParams.get("car");
     const wheel = searchParams.get("wheel");
     const work = searchParams.get("work");
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Прокрутить вверх при монтировании компонента
+    }, []);
     
     return(
         <div className="app">
