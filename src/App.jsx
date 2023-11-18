@@ -8,6 +8,7 @@ import { Payment } from "./pages/payment/payment";
 import { Confirm } from "./pages/confirm/confirm";
 import { Reg } from "./pages/reg/reg";
 import { Profile } from "./pages/profile/profile";
+import { OrderPage } from "./pages/orderPage/orderPage";
 import { Page404 } from "./pages/404/404";
 
 function App() {
@@ -52,6 +53,13 @@ function App() {
       element:
       <Layout>
         <Profile />
+      </Layout>
+    },
+    {
+      path: "/order",
+      element:
+      <Layout>
+        <OrderPage />
       </Layout>
     },
     {

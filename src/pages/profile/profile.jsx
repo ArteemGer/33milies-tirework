@@ -10,6 +10,8 @@ export const Profile = () => {
 
     const navigate = useNavigate()
 
+    
+
     useEffect(()=>{
         (async ()=>{
           const { data } = await supabase.auth.getUser()
@@ -38,6 +40,48 @@ export const Profile = () => {
                 <button className='back' onClick={() => navigate(-1)}></button>
                 <h3 className="user-type">Личный кабинет{userData && userData.is_admin == true ? " менеджера" : null}</h3>
             </div>
+            <div class="grid-container">
+                <div class="grid-title">ID</div>
+                <div class="grid-title">Диаметр колеса</div>
+                <div class="grid-title">№ Комплекса</div>
+                <div class="grid-title">Дата/время</div>
+                <div class="grid-title">Марка/модель авто</div>
+                <div class="grid-title">Статус</div>
+                <div class="grid-title"></div>
+
+                <div class="grid-item">1111</div>
+                <div class="grid-item">22</div>
+                <div class="grid-item">№1</div>
+                <div class="grid-item">12.12.2023 13:00</div>
+                <div class="grid-item">Audi q5</div>
+                <div class="grid-item"><img src="./confirmWork.png" alt="" /></div>
+                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
+
+                <div class="grid-item">1111</div>
+                <div class="grid-item">15</div>
+                <div class="grid-item">№1</div>
+                <div class="grid-item">12.12.2023 12:00</div>
+                <div class="grid-item">Kia Rio</div>
+                <div class="grid-item"><img src="./no.png" alt="" /></div>
+                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
+
+                <div class="grid-item">1111</div>
+                <div class="grid-item">15</div>
+                <div class="grid-item">№1</div>
+                <div class="grid-item">12.12.2023 12:00</div>
+                <div class="grid-item">Kia Rio</div>
+                <div class="grid-item"><img src="./wait.png" alt="" /></div>
+                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
+
+                <div class="grid-item">1111</div>
+                <div class="grid-item">15</div>
+                <div class="grid-item">№1</div>
+                <div class="grid-item">12.12.2023 12:00</div>
+                <div class="grid-item">Kia Rio</div>
+                <div class="grid-item"><img src="./finish.png" alt="" /></div>
+                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
+                
+            </div>
             <div className="user-data">
                 <div className="user-info">
                     <div className="type-info">
@@ -52,10 +96,6 @@ export const Profile = () => {
                     </div>
                 </div>
                 <button className="log-out" onClick={() => signOut()}>Выйти из аккаунта</button>
-            </div>
-            <h3 className="user-type">Заказы</h3>
-            <div className="order-data">
-
             </div>
         </div>
 

@@ -49,11 +49,34 @@
     justify-content: center;
     align-items: center;
 }
-.order-data{
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     width: 1620px;
-    height: 576px;
     border: 2px rgba(181, 181, 181, 1) solid;
-    border-radius: 10px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  }
+  .grid-title{
+    background-color: black;
+    color: white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 70px;
+  }
+  .grid-item {
+    padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-top: 1px black solid;
+  }
+
+.read-more{
+    background-color: rgba(0, 148, 255, 1);
+    border: none;
+    border-radius: 6px;
+    width: 158px;
+    height: 40px;
+    color:white;
+    font-size: 15px;
 }
