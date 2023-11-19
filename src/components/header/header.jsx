@@ -59,7 +59,6 @@ export const Header = () => {
           const { data } = await supabase.auth.getUser()
           setIsLoading(false)
           setUser(data.user)
-          console.log(data);
         })()
     }, [])
 

@@ -1,14 +1,16 @@
 import { supabase } from "../../supabaseClient";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import './profile.css'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, NavLink } from 'react-router-dom';
 
 export const Profile = () => {
     const [user, setUser] = useState()
     const [userData, setUserData] = useState()
     const [isLoading , setIsLoading] = useState(true)
+    const [gridData, setGridData] = useState([]);
 
     const navigate = useNavigate()
+
 
     
 
@@ -34,53 +36,67 @@ export const Profile = () => {
 
 
 
+
+    useEffect(() => {
+        const getAllOrders = async () => {
+          const { data, error } = await supabase
+          .from('orders')
+          .select('*');
+          if (error) {
+            console.error('Ошибка при получении данных:', error.message);
+          } else {
+            setGridData(data); 
+            console.log(data);
+          }
+        };
+    
+        getAllOrders(); 
+      }, []);
+
+
+
     return(
         <div className="profile-data">
             <div className="profile-head">
                 <button className='back' onClick={() => navigate(-1)}></button>
                 <h3 className="user-type">Личный кабинет{userData && userData.is_admin == true ? " менеджера" : null}</h3>
             </div>
-            <div class="grid-container">
-                <div class="grid-title">ID</div>
-                <div class="grid-title">Диаметр колеса</div>
-                <div class="grid-title">№ Комплекса</div>
-                <div class="grid-title">Дата/время</div>
-                <div class="grid-title">Марка/модель авто</div>
-                <div class="grid-title">Статус</div>
-                <div class="grid-title"></div>
+            <div className="grid-container">
+                <div className="grid-titles-container">
+                    <div className="grid-title">ID</div>
+                    <div className="grid-title di-item">Диаметр колеса</div>
+                    <div className="grid-title number-item">№ Комплекса</div>
+                    <div className="grid-title date-item date-title">Дата/время</div>
+                    <div className="grid-title car-item car-title">Марка/модель авто</div>
+                    <div className="grid-title status-title">Статус</div>
+                    <div className="grid-title"></div>
+                </div>
 
-                <div class="grid-item">1111</div>
-                <div class="grid-item">22</div>
-                <div class="grid-item">№1</div>
-                <div class="grid-item">12.12.2023 13:00</div>
-                <div class="grid-item">Audi q5</div>
-                <div class="grid-item"><img src="./confirmWork.png" alt="" /></div>
-                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
-
-                <div class="grid-item">1111</div>
-                <div class="grid-item">15</div>
-                <div class="grid-item">№1</div>
-                <div class="grid-item">12.12.2023 12:00</div>
-                <div class="grid-item">Kia Rio</div>
-                <div class="grid-item"><img src="./no.png" alt="" /></div>
-                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
-
-                <div class="grid-item">1111</div>
-                <div class="grid-item">15</div>
-                <div class="grid-item">№1</div>
-                <div class="grid-item">12.12.2023 12:00</div>
-                <div class="grid-item">Kia Rio</div>
-                <div class="grid-item"><img src="./wait.png" alt="" /></div>
-                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
-
-                <div class="grid-item">1111</div>
-                <div class="grid-item">15</div>
-                <div class="grid-item">№1</div>
-                <div class="grid-item">12.12.2023 12:00</div>
-                <div class="grid-item">Kia Rio</div>
-                <div class="grid-item"><img src="./finish.png" alt="" /></div>
-                <div class="grid-item"><button className="read-more" onClick={console.log('pipa')}>Подробнее</button></div>
                 
+                    {gridData.map((item, index) => {
+                    return (
+                        <React.Fragment key={index}>
+                        <div className="grid-items-container">
+                            <div className="grid-item">{item.id}</div>
+                            <div className="grid-item">{item.wheelDiameter}</div>
+                            <div className="grid-item">{item.jobNumber}</div>
+                            <div className="grid-item date-item">{item.date} {item.time}</div>
+                            <div className="grid-item car-item">{item.autoName}</div>
+                            <div className="grid-item">
+                                {item.status === 0 && <img src="./confirmWork.png" alt="" />}
+                                {item.status === 2 && <img src="./no.png" alt="" />}
+                                {item.status === 1 && <img src="./wait.png" alt="" />}
+                                {item.status === 3 && <img src="./finish.png" alt="" />}
+                            </div>
+                                <div className="grid-item">
+                                <NavLink to={`/order?id=${item.id}`}>
+                                    <button className="read-more">Подробнее</button>
+                                </NavLink>    
+                                </div>
+                            </div>
+                        </React.Fragment>
+                    )
+                    })}
             </div>
             <div className="user-data">
                 <div className="user-info">

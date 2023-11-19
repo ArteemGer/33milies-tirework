@@ -65,17 +65,18 @@ export function Payment() {
             .from('orders')
             .select('*')
             let hasMatch = false
-            const currentDate = new Date()
-            const nowHours = currentDate.toLocaleDateString()
-            const nowDate = currentDate.getDate() 
-
-            //доделай проверку на коректную дату
-
+            let noTime = false
+            const now = new Date();
+            const formattedDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}`;
+            const formattedTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
             data.map((e) => {
                 allDate.push(e.date)
                 allTime.push(e.time.slice(0, -3))
                 if(date == e.date && time == e.time.slice(0, -3)){
                     hasMatch = true
+                }
+                if(date <= formattedDate && time <= formattedTime){
+                    noTime = true
                 }
 
             })
@@ -86,6 +87,14 @@ export function Payment() {
                 setAlert('alert')
                 setIsButtonDisabled(false)
             }
+            if(noTime){
+                setAlertPast('alertPast is-visible')
+                setIsButtonDisabled(true)
+            }else{
+                setAlertPast('alertPast')
+                setIsButtonDisabled(false)
+            }
+
         })()
         
     }, [date,time])

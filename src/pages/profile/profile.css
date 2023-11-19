@@ -51,7 +51,7 @@
 }
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 1620px;
     border: 2px rgba(181, 181, 181, 1) solid;
   }
@@ -70,6 +70,37 @@
     padding-right: 70px;
     border-top: 1px black solid;
   }
+  .grid-titles-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 1620px;
+  }
+  
+  .grid-items-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .date-item{
+    width: 300px;
+  }
+  .car-item{
+    width: 300px;
+  }
+  .date-title{
+    padding-left: 20px;
+  }
+  .car-title{
+    padding-left: 20px;
+  }
+  .status-title{
+    padding-left: 10px;
+  }
+  .di-item{
+    padding-left: 60px;
+  }
+  .number-item{
+    padding-left: 30px;
+  }
 
 .read-more{
     background-color: rgba(0, 148, 255, 1);
@@ -79,4 +110,5 @@
     height: 40px;
     color:white;
     font-size: 15px;
+    cursor:pointer;
 }
