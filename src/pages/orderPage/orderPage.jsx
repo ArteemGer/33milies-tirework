@@ -8,14 +8,19 @@ export const OrderPage = () => {
     const orderId = searchParams.get('id');
 
     const navigate = useNavigate()
+    const [orderData, setOrderData] = useState()
     const [userData, setUserData] = useState()
 
 
     useEffect(()=>{
         (async ()=>{
-          const { data } = await supabase
-          .from('profile')
-          .select('*')
+            const { data: { user } } = await supabase.auth.getUser()
+            console.log(user.email);
+            const { data: data2, error } = await supabase
+                .from('profile')
+                .select()
+                .eq('email', user.email);
+            setUserData(data2[0]);
         })()
     }, [])
 
@@ -25,10 +30,34 @@ export const OrderPage = () => {
           .from('orders')
           .select('*')
           .eq('id', orderId)
-          setUserData(data)
+          setOrderData(data)
         };
         getInfoOrder(); 
       }, []);
+
+      const handleCancel = async() => {
+        const { data, error } = await supabase
+        .from('orders')
+        .update({ status: 2})
+        .eq('id', orderId);
+        navigate(-1)
+      };
+
+      const handleConfirm = async() => {
+        const { data, error } = await supabase
+        .from('orders')
+        .update({ status: 0})
+        .eq('id', orderId);
+        window.location.reload()
+      };
+      const handleReady = async() => {
+        const { data, error } = await supabase
+        .from('orders')
+        .update({ status: 3})
+        .eq('id', orderId);
+        window.location.reload()
+      };
+
     return(
         <div className='order'>
             <div className="order-head">
@@ -37,24 +66,25 @@ export const OrderPage = () => {
             </div>
             {userData && (
                 <div className='block-order-info'>
-                    <p className='order-info'>Диаметр колеса: {userData[0].wheelDiameter}</p>
-                    <p className='order-info'>№Комлекса: {userData[0].jobNumber}</p>
-                    <p className='order-info'>Дата/время: {userData[0].date}  {userData[0].time}</p>
-                    <p className='order-info'>Марка и модель авто: {userData[0].autoName}</p>
-                    <p className='order-info'>Тип автомобиля: {userData[0].typeCar}</p>
+                    <p className='order-info'>Диаметр колеса: {orderData[0].wheelDiameter}</p>
+                    <p className='order-info'>№Комлекса: {orderData[0].jobNumber}</p>
+                    <p className='order-info'>Дата/время: {orderData[0].date}  {orderData[0].time}</p>
+                    <p className='order-info'>Марка и модель авто: {orderData[0].autoName}</p>
+                    <p className='order-info'>Тип автомобиля: {orderData[0].typeCar}</p>
                     <p className='order-info'>Статус: 
-                        {userData[0].status === 0 && ' Подтвержден'}
-                        {userData[0].status === 2 && ' Отменен'}
-                        {userData[0].status === 1 && ' Ожидает подтверждения'}
-                        {userData[0].status === 3 && ' Завершен'}
+                        {orderData[0].status === 0 && ' Подтвержден'}
+                        {orderData[0].status === 2 && ' Отменен'}
+                        {orderData[0].status === 1 && ' Ожидает подтверждения'}
+                        {orderData[0].status === 3 && ' Завершен'}
                     </p>
-                    <p className='order-info'>Адрес электронной почты: {userData[0].email}</p>
-                    <p className='order-info'>ФИО: {userData[0].name}</p>
-                    <p className='order-info'>Телефон: {userData[0].phone}</p>
-                    {userData[0].ditails && <p>Подробнее: {userData[0].ditails}</p>}
+                    <p className='order-info'>Адрес электронной почты: {orderData[0].email}</p>
+                    <p className='order-info'>ФИО: {orderData[0].name}</p>
+                    <p className='order-info'>Телефон: {orderData[0].phone}</p>
+                    {orderData[0].ditails && <p>Подробнее: {orderData[0].ditails}</p>}
                     <div className="buttons">
-                        <button className='confirm-button'>Принять заявку</button>
-                        <button className='cancel-button'>Отменить заявку</button>
+                        {userData.is_admin && orderData[0].status != 2 && orderData[0].status != 0 && orderData[0].status != 3 &&<button onClick={handleConfirm} className='confirm-button'>Принять заявку</button>}
+                        {orderData[0].status != 2 && orderData[0].status != 3 && <button onClick={handleCancel} className='cancel-button'>Отменить заявку</button>}
+                        {orderData[0].status === 0 && orderData[0].status != 3 && <button onClick={handleReady} className='ready-button'>Услага оказана</button>}
                     </div>
                 </div>
             )}

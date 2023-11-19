@@ -25,6 +25,8 @@ export const Profile = () => {
                 .select()
                 .eq('email', data.user.email);
             setUserData(data2[0]);
+            console.log(data2[0]);
+            console.log(userData);
           }
         })()
     })
@@ -33,7 +35,6 @@ export const Profile = () => {
         const { error } = await supabase.auth.signOut()
         return window.location.href = `${window.location.origin}/`;
     }
-
 
 
 
@@ -46,7 +47,6 @@ export const Profile = () => {
             console.error('Ошибка при получении данных:', error.message);
           } else {
             setGridData(data); 
-            console.log(data);
           }
         };
     
@@ -73,30 +73,63 @@ export const Profile = () => {
                 </div>
 
                 
-                    {gridData.map((item, index) => {
-                    return (
-                        <React.Fragment key={index}>
-                        <div className="grid-items-container">
-                            <div className="grid-item">{item.id}</div>
-                            <div className="grid-item">{item.wheelDiameter}</div>
-                            <div className="grid-item">{item.jobNumber}</div>
-                            <div className="grid-item date-item">{item.date} {item.time}</div>
-                            <div className="grid-item car-item">{item.autoName}</div>
-                            <div className="grid-item">
-                                {item.status === 0 && <img src="./confirmWork.png" alt="" />}
-                                {item.status === 2 && <img src="./no.png" alt="" />}
-                                {item.status === 1 && <img src="./wait.png" alt="" />}
-                                {item.status === 3 && <img src="./finish.png" alt="" />}
-                            </div>
-                                <div className="grid-item">
-                                <NavLink to={`/order?id=${item.id}`}>
-                                    <button className="read-more">Подробнее</button>
-                                </NavLink>    
-                                </div>
-                            </div>
+                    {userData && userData.is_admin ? (
+                        <React.Fragment>
+                        {gridData.map((item, index) => {
+                        return (
+                            <React.Fragment key={index}>
+                                <div className="grid-items-container">
+                                    <div className="grid-item">{item.id}</div>
+                                    <div className="grid-item">{item.wheelDiameter}</div>
+                                    <div className="grid-item">{item.jobNumber}</div>
+                                    <div className="grid-item date-item">{item.date} {item.time}</div>
+                                    <div className="grid-item car-item">{item.autoName}</div>
+                                    <div className="grid-item">
+                                        {item.status === 0 && <img src="./confirmWork.png" alt="" />}
+                                        {item.status === 2 && <img src="./no.png" alt="" />}
+                                        {item.status === 1 && <img src="./wait.png" alt="" />}
+                                        {item.status === 3 && <img src="./finish.png" alt="" />}
+                                    </div>
+                                        <div className="grid-item">
+                                        <NavLink to={`/order?id=${item.id}`}>
+                                            <button className="read-more">Подробнее</button>
+                                        </NavLink>    
+                                        </div>
+                                    </div>
+                                </React.Fragment>
+                            )
+                            })}
                         </React.Fragment>
-                    )
-                    })}
+                    ) : (
+                        <React.Fragment>
+                        {gridData.map((item, index) => {
+                            if(item.email === user.email){
+                                return (
+                                    <React.Fragment key={index}>
+                                        <div className="grid-items-container">
+                                            <div className="grid-item">{item.id}</div>
+                                            <div className="grid-item">{item.wheelDiameter}</div>
+                                            <div className="grid-item">{item.jobNumber}</div>
+                                            <div className="grid-item date-item">{item.date} {item.time}</div>
+                                            <div className="grid-item car-item">{item.autoName}</div>
+                                            <div className="grid-item">
+                                                {item.status === 0 && <img src="./confirmWork.png" alt="" />}
+                                                {item.status === 2 && <img src="./no.png" alt="" />}
+                                                {item.status === 1 && <img src="./wait.png" alt="" />}
+                                                {item.status === 3 && <img src="./finish.png" alt="" />}
+                                            </div>
+                                                <div className="grid-item">
+                                                <NavLink to={`/order?id=${item.id}`}>
+                                                    <button className="read-more">Подробнее</button>
+                                                </NavLink>    
+                                                </div>
+                                            </div>
+                                        </React.Fragment>
+                                    )
+                            }
+                            })}
+                        </React.Fragment>
+                    )}
             </div>
             <div className="user-data">
                 <div className="user-info">
