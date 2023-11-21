@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Price } from '../../components/price/price';
 import { useEffect, useState } from 'react';
 import YandexMap from '../../components/yandexMap/yandexMap';
+import { toast } from 'react-toastify';
 
 import './payment.css'
 import { supabase } from '../../supabaseClient';
@@ -122,7 +123,7 @@ export function Payment() {
         if(error == null){
             navigate(confirm.src)
         } else{
-            console.log('Заполните все нужные поля')
+            toast.error('Заполните все нужные поля')
         }
     }
     

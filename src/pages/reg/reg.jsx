@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './reg.css';
 import { supabase } from '../../supabaseClient';
 import { useNavigate } from 'react-router-dom';
+import InputMask from 'react-input-mask';
+import { toast } from 'react-toastify';
 
 export const Reg = () => {
   const navigate = useNavigate()
@@ -13,21 +15,44 @@ export const Reg = () => {
 
 
   async function registerUser() {
-    const { data, error } = await supabase
-      .from ('profile')
-      .insert({
-        is_admin: false,
-        full_name: name,
-        email: email,
-        phone_number: phoneNumber,
-        password:password
-      });
-    const { dataAuth, errorAuth } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-    })
-    navigate(-1)
+    if (name === '' || phoneNumber === '' || email === '' || password === '' || confirmPassword === '') {
+      toast.error('Не все поля заполнены'); 
+    } else{
+      if (!validateEmail(email)) {
+        toast.error('Поле почты написано не правильно')
+      } else{
+        if (password === confirmPassword) {
+          const { data, error } = await supabase
+          .from ('profile')
+          .insert({
+            is_admin: false,
+            full_name: name,
+            email: email,
+            phone_number: phoneNumber,
+            password:password
+          });
+        const { dataAuth, errorAuth } = await supabase.auth.signUp({
+            email: email,
+            password: password,
+        })
+        navigate(-1)
+        } else {
+          toast.error('Поля пароль и подтверждения пароля не идентичны')
+        }
+      }
+    }
   }
+  const handleInputChange = (e) => {
+    const regex = /^[0-9\b]+$/;
+    if (regex.test(e.target.value) || e.target.value === '') {
+      setPhoneNumber(e.target.value.slice(0, 11));
+    }
+  }
+  const validateEmail = (email) => {
+    // Regular expression for email validation
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
   
 
@@ -49,7 +74,8 @@ export const Reg = () => {
               className='reg-input'
               type="text"
               value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              onChange={handleInputChange}
+              maxLength={11}
             />
             <p className='inputs-text'>Адрес электронной почты</p>
             <input

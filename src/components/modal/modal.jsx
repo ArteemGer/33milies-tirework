@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './modal.css';
 import { createClient } from '@supabase/supabase-js';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Modal = ({closeModal, isModalOpen}) =>{
     const supabaseUrl  = 'https://ppwrvouuxbpzoagefkyu.supabase.co';
@@ -58,7 +60,7 @@ export const Modal = ({closeModal, isModalOpen}) =>{
             handleCloseModal()
             window.location.reload()
         } else{
-            alert('Введенные почта или пароль не верны')
+            toast.error('Введенные почта или пароль не верны')
         }
     }
 

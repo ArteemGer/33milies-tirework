@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from 'react';
+import { ToastContainer } from "react-toastify";
 
 import { Home } from './pages/home/home';
 import { Selection } from './pages/selection/selection';
@@ -76,6 +77,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer/>
     </>
   );
 }

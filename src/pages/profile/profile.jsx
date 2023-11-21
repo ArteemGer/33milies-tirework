@@ -2,6 +2,7 @@ import { supabase } from "../../supabaseClient";
 import React, { useState, useEffect } from "react";
 import './profile.css'
 import { useLocation, useNavigate, NavLink } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 export const Profile = () => {
     const [user, setUser] = useState()
@@ -33,7 +34,11 @@ export const Profile = () => {
 
     const signOut = async() => {
         const { error } = await supabase.auth.signOut()
-        return window.location.href = `${window.location.origin}/`;
+        toast.success('Вы успешно вышли из аккаунта')
+        setTimeout(() => {
+            return window.location.href = `${window.location.origin}/`;
+          }, 3000);
+        
     }
 
 

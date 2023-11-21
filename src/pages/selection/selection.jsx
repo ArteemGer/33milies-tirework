@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './selection.css'
 import { useNavigate } from 'react-router-dom';
 import { Price } from '../../components/price/price';
+import { toast } from 'react-toastify';
 
 
 const cars = [
@@ -54,6 +55,8 @@ export const Selection = () => {
     const showPrice = () => {
         if(selectedAutoType !== '' && selectedWheelType !== '' && selectedWorkType !== ''){
             setIsForm(true)
+        } else{
+            toast.error('Не выбраны все три представленных поля')
         }
     }
 
