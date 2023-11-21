@@ -34,11 +34,7 @@ export const Profile = () => {
 
     const signOut = async() => {
         const { error } = await supabase.auth.signOut()
-        toast.success('Вы успешно вышли из аккаунта')
-        setTimeout(() => {
-            return window.location.href = `${window.location.origin}/`;
-          }, 3000);
-        
+        return window.location.href = `${window.location.origin}/`; 
     }
 
 

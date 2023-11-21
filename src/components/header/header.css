@@ -107,14 +107,17 @@
     height: 25px;
   }
   .log-in img{
-    width: 27px;
-    height: 27px;
+    width: 20px;
+    height: 20px;
   }
   .menu{
     width: 280px;
   }
   .nav-menu{
     display: none;
+  }
+  .account{
+    gap: 0;
   }
   .name-user{
     font-size: 10px;

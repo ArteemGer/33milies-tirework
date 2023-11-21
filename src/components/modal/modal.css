@@ -108,3 +108,24 @@
 .reg a:hover{
     color: black;
 }
+@media(max-width:320px){
+    .modal{
+        width: 300px;
+    }
+    .authorization-form{
+        width: 234px;
+    }
+    .input-email, .input-password{
+        width: 200px;
+    }
+    .reg{
+        font-size: 14px;
+    }
+    .authorization-input{
+        width: 200px;
+        font-size: 14px;
+    }
+    .sign-in{
+        width: 200px;
+    }
+}

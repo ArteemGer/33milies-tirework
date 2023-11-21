@@ -32,3 +32,24 @@
 .back-to-home:hover{
     background-color: #0072c4;
 }
+@media(max-width:320px){
+    .main-confirm{
+        width: 200px;
+    }
+    .main-confirm img{
+        width: 200px;
+    }
+    .order-status{
+        font-size: 14px;
+        text-align: center;
+    }
+    .back-to-home{
+        width: 200px;
+        font-size: 14px;
+    }
+    .back-to-home a{
+        margin-top: 5px;
+        width: 200px;
+        margin-left: 0px;
+    }
+}

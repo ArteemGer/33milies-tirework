@@ -67,3 +67,51 @@
     margin-bottom: 25px;
     gap: 20px;
 }
+@media(max-width: 768px){
+    .order{
+        width: 768px;
+    }
+    .order-head{
+        width: 600px;
+    }
+    .order-head h1{
+        font-size: 20px;
+        width: 600px;
+    }
+    .block-order-info{
+        width: 600px;
+    }
+    .block-order-info p{
+        font-size: 20px;
+    }
+    .buttons{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+@media(max-width: 320px){
+    .order{
+        width: 320px;
+    }
+    .order-head{
+        width: 300px;
+    }
+    .order-head h1{
+        font-size: 20px;
+        width: 300px;
+    }
+    .block-order-info{
+        width: 300px;
+    }
+    .block-order-info p{
+        font-size: 14px;
+    }
+    .buttons{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .confirm-button, .cancel-button,.ready-button{
+        width: 200px;
+        font-size: 14px;
+    }
+}

@@ -152,15 +152,17 @@
 @media(max-width: 768px){
     .input-info{
         width: 600px;
+        height: 1600px;
     }
 }
 @media(max-width: 320px){
     .input-info{
         width: 280px;
-        height: 700px;
+        height: 900px;
     }
     .inputs{
         width: 200px;
+        margin-top: 0px;
     }
     .inputs p{
         font-size: 12px;
@@ -168,6 +170,7 @@
     .input{
         width: 200px;
         height: 30px;
+        font-size: 14px;
     }
     .date{
         width: 200px;
@@ -178,7 +181,34 @@
         width: 200px;
     }
     .date-choose{
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
+    }
+    .yandex-map{
+        display: none;
+    }
+    .confirm{
+        width: 200px;
+        font-size: 14px;
+        height: 40px;
+    }
+    .date-choose{
+        width: 200px;
+    }
+    .date-choose p{
+        font-size: 14px;
+    }
+    .date-pick{
+        width: 200px;
+        font-size: 14px;
+        height: 46px;
+    }
+    .time-block{
+        width: 200px;
+    }
+    .time-pick{
+        width: 200px;
+        font-size: 14px;
+        height: 46px;
     }
 }

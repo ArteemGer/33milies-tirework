@@ -61,3 +61,57 @@
     align-items: center;
     border-radius: 10px;
 }
+
+@media(max-width:768px){
+    .wheel-img{
+        display: none;
+    }
+    .registration{
+        width: 600px;
+    }
+    .reg-title{
+        font-size: 35px;
+    }
+    .reg-inputs{
+        margin-left: 30px;
+    }
+
+}
+@media(max-width:320px){
+    .wheel-img{
+        display: none;
+    }
+    .registration{
+        width: 250px;
+    }
+    .reg-title{
+        font-size: 25px;
+    }
+    .reg-inputs{
+        margin-left: 30px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .inputs-text{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .reg-input{
+        width: 200px;
+        margin-top: 0px;
+        height: 30px;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    .reg-confirm{
+        width: 200px;
+        font-size: 14px;
+        margin-top: 30px;
+        height: 40px;
+        border-radius: 6px;
+    }
+    .reg-content{
+        height: 450px;
+        margin-bottom: 50px;
+    }
+}
