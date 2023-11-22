@@ -100,32 +100,39 @@ export function Payment() {
         
     }, [date,time])
 
-
-
-    async function addOrder() {
-        const {data, error} = await supabase
-        .from ('orders')
-        .insert({
-            wheelDiameter: wheel,
-            jobNumber: work,
-            date: date,
-            time: time,
-            typeCar: car,
-            autoName: carName,
-            status: 1,
-            ditails: ditails,
-            name: name,
-            phone: phone,
-            email: email,
-        })
-        
-        
-        if(error == null){
-            navigate(confirm.src)
-        } else{
-            toast.error('Заполните все нужные поля')
+async function addOrder() {
+    if (!validateEmail(email)){
+        toast.error('Поле почты написано не правильно')
+    } else {
+            const {data, error} = await supabase
+            .from ('orders')
+            .insert({
+                wheelDiameter: wheel,
+                jobNumber: work,
+                date: date,
+                time: time,
+                typeCar: car,
+                autoName: carName,
+                status: 1,
+                ditails: ditails,
+                name: name,
+                phone: phone,
+                email: email,
+            })
+            
+            
+            if(error == null){
+                navigate(confirm.src)
+            } else{
+                toast.error('Заполните все нужные поля')
+            }
         }
     }
+
+    const validateEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    };
     
     return(
         <div className="app">
@@ -139,7 +146,7 @@ export function Payment() {
                         <p className='inputs-text'>Контактное лицо</p>
                         <input type="text" className='input' onChange={handleName}/>
                         <p className='inputs-text'>Телефон</p>
-                        <input type="text" className='input' onChange={handlePhone}/>
+                        <input type="text" className='input' onChange={handlePhone} maxLength={11}/>
                         <p className='inputs-text'>Адрес электронной почты</p>
                         <input type="text" className='input' onChange={handleEmail}/>
                         <p className='inputs-text'>Марка и модель авто</p>
