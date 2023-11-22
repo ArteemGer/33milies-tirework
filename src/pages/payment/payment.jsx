@@ -79,6 +79,9 @@ export function Payment() {
                 if(date <= formattedDate && time <= formattedTime){
                     noTime = true
                 }
+                if(date <= formattedDate){
+                    noTime = true
+                }
 
             })
             if(hasMatch){
