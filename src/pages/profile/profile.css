@@ -63,14 +63,16 @@
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 70px;
+    font-size: 20px;
   }
   .grid-item {
     padding: 10px;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 70px;
-    padding-right: 70px;
+    padding-right: 50px;
     border-bottom: 1px black solid;
+    font-size: 20px;
   }
   .grid-titles-container {
     display: grid;
@@ -82,35 +84,35 @@
     grid-template-columns: repeat(7, 1fr);
   }
   .date-item{
-    width: 300px;
+    width: 325px;
   }
   .car-item{
     width: 300px;
   }
   .date-title{
-    padding-left: 20px;
+    padding-left: 0px;
   }
   .car-title{
-    padding-left: 20px;
+    padding-left: 0px;
   }
   .status-title{
-    padding-left: 10px;
+    padding-left: 0px;
   }
   .di-item{
-    padding-left: 60px;
+    padding-left: 30px;
   }
   .number-item{
-    padding-left: 30px;
+    padding-left: 10px;
   }
 
 .read-more{
     background-color: rgba(0, 148, 255, 1);
     border: none;
     border-radius: 6px;
-    width: 158px;
-    height: 40px;
+    width: 180px;
+    height: 50px;
     color:white;
-    font-size: 15px;
+    font-size: 20px;
     cursor:pointer;
 }
 

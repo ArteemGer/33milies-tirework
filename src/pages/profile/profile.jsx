@@ -2,7 +2,7 @@ import { supabase } from "../../supabaseClient";
 import React, { useState, useEffect } from "react";
 import './profile.css'
 import { useLocation, useNavigate, NavLink } from 'react-router-dom';
-import { toast } from "react-toastify";
+
 
 export const Profile = () => {
     const [user, setUser] = useState()
@@ -70,7 +70,7 @@ export const Profile = () => {
                     <div className="grid-title date-item date-title">Дата/время</div>
                     <div className="grid-title car-item car-title">Марка/модель авто</div>
                     <div className="grid-title status-title">Статус</div>
-                    <div className="grid-title"></div>
+                    <div className="grid-title button-readmore"></div>
                 </div>
 
                 
@@ -80,7 +80,7 @@ export const Profile = () => {
                         return (
                             <React.Fragment key={index}>
                                 <div className="grid-items-container">
-                                    <div className="grid-item">{item.id}</div>
+                                    <div className="grid-item">{item.id.substring(0, 13)}...</div>
                                     <div className="grid-item">{item.wheelDiameter}</div>
                                     <div className="grid-item">{item.jobNumber}</div>
                                     <div className="grid-item date-item">{item.date} {item.time}</div>
