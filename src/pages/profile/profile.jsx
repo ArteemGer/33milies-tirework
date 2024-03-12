@@ -80,7 +80,7 @@ export const Profile = () => {
                         return (
                             <React.Fragment key={index}>
                                 <div className="grid-items-container">
-                                    <div className="grid-item">{item.id.substring(0, 13)}...</div>
+                                    <div className="grid-item" title={`${item.id}`}>{item.id.substring(0, 13)}...</div>
                                     <div className="grid-item">{item.wheelDiameter}</div>
                                     <div className="grid-item">{item.jobNumber}</div>
                                     <div className="grid-item date-item">{item.date} {item.time}</div>
