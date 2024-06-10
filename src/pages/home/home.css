@@ -195,6 +195,26 @@
     }
   }
 
+  @media (max-width: 1280px) {
+    .main{
+      width: 1280px;
+    }
+    .info2-text{
+      margin-left: 50px;
+    }
+    .second-text-info img{
+      width: 627px;
+      height: 619px;
+    }
+    .block-info{
+      margin-left: 100px;
+    }
+    .image1 img{
+      width: 616px;
+      height: 333px;
+    }
+  }
+
   @media (max-width: 1024px){
     .main{
       width: 1024px;

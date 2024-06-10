@@ -115,7 +115,20 @@
     font-size: 20px;
     cursor:pointer;
 }
-
+@media(max-width:1280px){
+  .profile-data{
+    width: 1280px;
+  }
+  .profile-head{
+    width: 1200px;
+  }
+  .user-type{
+    font-size: 40px;
+  }
+  .user-data{
+    width: 1200px;
+  }
+}
 @media(max-width:768px){
   .user-data{
     width: 600px;

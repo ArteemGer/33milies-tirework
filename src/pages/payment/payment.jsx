@@ -146,15 +146,15 @@ async function addOrder() {
                 </div>
                 <form className='input-info'>
                     <div className="inputs">
-                        <p className='inputs-text'>Контактное лицо</p>
+                        <p className='inputs-text-noreg'>Контактное лицо</p>
                         <input type="text" className='input' onChange={handleName}/>
-                        <p className='inputs-text'>Телефон</p>
+                        <p className='inputs-text-noreg'>Телефон</p>
                         <input type="text" className='input' onChange={handlePhone} maxLength={11}/>
-                        <p className='inputs-text'>Адрес электронной почты</p>
+                        <p className='inputs-text-noreg'>Адрес электронной почты</p>
                         <input type="text" className='input' onChange={handleEmail}/>
-                        <p className='inputs-text'>Марка и модель авто</p>
+                        <p className='inputs-text-noreg'>Марка и модель авто</p>
                         <input type="text" className='input' onChange={handleCarName}/>
-                        <p className='inputs-text'>Подробности*</p>
+                        <p className='inputs-text-noreg'>Подробности*</p>
                         <input type="text" className='input add' onChange={handleDitails}/>
                         <p className='micro-text'>* - не обязательные поля</p>
                     </div>

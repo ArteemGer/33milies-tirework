@@ -134,6 +134,11 @@
         height: 340px;
     }
 }
+@media(max-width: 1280px) {
+    .date-choose{
+        height: 250px;
+    }
+}
 @media(max-width: 1024px){
     .input-info{
         width: 800px;
