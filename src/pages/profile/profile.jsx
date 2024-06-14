@@ -43,7 +43,8 @@ export const Profile = () => {
         const getAllOrders = async () => {
           const { data, error } = await supabase
           .from('orders')
-          .select('*');
+          .select('*')
+          .order('status', { ascending: true });
           if (error) {
             console.error('Ошибка при получении данных:', error.message);
           } else {
